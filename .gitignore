@@ -174,3 +174,5 @@ cython_debug/
 trades/trades.log
 # Mac OS X
 .DS_Store
+# scanner runtime data
+/data/
