@@ -31,6 +31,9 @@ class ScannerConfig:
     rugcheck_timeout_s: float
     reconnect_min_s: float
     reconnect_max_s: float
+    recheck_interval_s: float
+    recheck_min_age_s: float
+    recheck_max_attempts: int
 
     @classmethod
     def load(cls) -> "ScannerConfig":
@@ -48,4 +51,7 @@ class ScannerConfig:
             rugcheck_timeout_s=float(_env("RUGCHECK_TIMEOUT_S", "10")),
             reconnect_min_s=float(_env("RECONNECT_MIN_S", "2")),
             reconnect_max_s=float(_env("RECONNECT_MAX_S", "60")),
+            recheck_interval_s=float(_env("RECHECK_INTERVAL_S", "600")),
+            recheck_min_age_s=float(_env("RECHECK_MIN_AGE_S", "300")),
+            recheck_max_attempts=int(_env("RECHECK_MAX_ATTEMPTS", "5")),
         )
